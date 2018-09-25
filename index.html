@@ -42,7 +42,7 @@
 
       div.popup-content {
         background-color: LightSkyBlue;
-        background-image: linear-gradient(-3deg, DodgerBlue, LightSkyBlue, GhostWhite, white);
+        background-image: linear-gradient(-5deg, DodgerBlue, LightSkyBlue, GhostWhite, white);
         margin: auto;
         position: fixed;
         top: 0;
@@ -50,12 +50,10 @@
         left: 0;
         right: 0;
         padding: 15px;
-        /* max-height: 590px; */
-        /* max-width: 1170px; */
+        max-height: 590px;
+        max-width: 1170px;
         width: 802px;
         height: 404px;
-        /* width: 75%; */
-        /* height: 37.82%;; */
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
         -webkit-animation-name: animatetop;
         -webkit-animation-duration: 0.5s;
@@ -165,22 +163,18 @@
 
       button.subscribe {
         display: block;
-        margin: auto;
+        margin: 30px auto;
         border: none;
         width: 383.75px;
         height: 55px;
         background-image: url("images/button.png");
-        /* background-image: url("{{cdn 'assets/img/popup/button.png'}}"); */
         background-size: contain;
         background-repeat: no-repeat;
-        margin-top: 30px;
-        margin-bottom: 30px;
       }
       button.subscribe:hover,
       button.subscribe:focus {
         cursor: pointer;
         background-image: url("images/button-clicked.png");
-        /* background-image: url("{{cdn 'assets/img/popup/button-clicked.png'}}"); */
       }
 
       div.part {
@@ -239,11 +233,9 @@
         <h1 align=center>IT'S OUR WAY OF SAYING THANKS!</h1>
         <h2 align=center>Cool savings on our magazine plus Digital Edition <b>FREE!</b>*</h2>
       </div>
-      <!-- <img src="{{cdn 'assets/img/popup/cover.png'}}" class="cover"> -->
       <img src="images/cover.png" class="cover">
       <div class="part">
         <button class="subscribe"></button>
-        <!-- <img class="logo" src="{{cdn 'assets/img/popup/logo.png'}}"> -->
         <img class="logo" src="images/logo.png">
         <p align=center>*A one-year subscription will be added to your cart and you will be billed separately for the discounted price of $29.95.</p>
       </div>
@@ -260,7 +252,6 @@
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
-        toCheckout();
       }
     }
 
@@ -270,16 +261,10 @@
 
     close.onclick = function() {
       modal.style.display = "none";
-      toCheckout();
     }
 
     sub.onclick = function() {
       modal.style.display = "none";
-      // location.href = "/cart.php?action=add&sku=MUS12CK";
     }
-
-    function toCheckout(){
-    // location.href = "{{urls.checkout.single_address}}";
-  }
   </script>
 </html>
