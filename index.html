@@ -2,188 +2,188 @@
 <html lang="en">
   <body>
     <style>
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      h1 {
-        font-size: 18pt;
-        padding-top: 20px;
-      }
-      h2 {
-        font-size: 12pt;
-        color: #333;
-        padding-top: 10px;
-      }
-      p {
-        font-size: 10pt;
-        font-style: italic;
-        color: #333;
-        padding-top: 20px;
-      }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h1 {
+      font-size: 18pt;
+      padding-top: 20px;
+    }
+    h2 {
+      font-size: 12pt;
+      color: #333;
+      padding-top: 10px;
+    }
+    p {
+      font-size: 10pt;
+      font-style: italic;
+      color: #333;
+      padding-top: 20px;
+    }
 
-      div.popup {
-        display: none;
-        position: fixed;
-        left: 0;
+    div.popup {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      -webkit-animation-name: animate;
+      -webkit-animation-duration: 0.5s;
+      -moz-animation-name: animate;
+      -moz-animation-duration: 0.5s;
+      -ms-animation-name: animate;
+      -ms-animation-duration: 0.5s;
+      animation-name: animate;
+      animation-duration: 0.5s;
+    }
+
+    @-webkit-keyframes animate {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @-moz-keyframes animate {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @-ms-keyframes animate {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes animate {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    div.popup-content {
+      background-color: LightSkyBlue;
+      background-image: linear-gradient(-5deg, DodgerBlue, LightSkyBlue, GhostWhite, white);
+      margin: auto;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 15px;
+      max-height: 590px;
+      max-width: 1170px;
+      width: 802px;
+      height: 404px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.5s;
+      -moz-animation-name: animatetop;
+      -moz-animation-duration: 0.5s;
+      -ms-animation-name: animatetop;
+      -ms-animation-duration: 0.5s;
+      animation-name: animatetop;
+      animation-duration: 0.5s;
+    }
+
+    @-webkit-keyframes animatetop {
+      from {
+        top: -100%;
+      }
+      to {
         top: 0;
-        z-index: 100;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.4);
-        -webkit-animation-name: animate;
-        -webkit-animation-duration: 0.5s;
-        -moz-animation-name: animate;
-        -moz-animation-duration: 0.5s;
-        -ms-animation-name: animate;
-        -ms-animation-duration: 0.5s;
-        animation-name: animate;
-        animation-duration: 0.5s;
       }
-
-      div.popup-content {
-        background-color: LightSkyBlue;
-        background-image: linear-gradient(-5deg, DodgerBlue, LightSkyBlue, GhostWhite, white);
-        margin: auto;
-        position: fixed;
+    }
+    @-moz-keyframes animatetop {
+      from {
+        top: -100%;
+      }
+      to {
         top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 15px;
-        max-height: 590px;
-        max-width: 1170px;
-        width: 802px;
-        height: 404px;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
-        -webkit-animation-name: animatetop;
-        -webkit-animation-duration: 0.5s;
-        -moz-animation-name: animatetop;
-        -moz-animation-duration: 0.5s;
-        -ms-animation-name: animatetop;
-        -ms-animation-duration: 0.5s;
-        animation-name: animatetop;
-        animation-duration: 0.5s;
       }
+    }
+    @-ms-keyframes animatetop {
+      from {
+        top: -100%;
+      }
+      to {
+        top: 0;
+      }
+    }
+    @keyframes animatetop {
+      from {
+        top: -100%;
+      }
+      to {
+        top: 0;
+      }
+    }
 
-      @-webkit-keyframes animatetop {
-        from {
-          top: -100%;
-        }
-        to {
-          top: 0;
-        }
-      }
-      @-moz-keyframes animatetop {
-        from {
-          top: -100%;
-        }
-        to {
-          top: 0;
-        }
-      }
-      @-ms-keyframes animatetop {
-        from {
-          top: -100%;
-        }
-        to {
-          top: 0;
-        }
-      }
-      @keyframes animatetop {
-        from {
-          top: -100%;
-        }
-        to {
-          top: 0;
-        }
-      }
+    img.logo {
+      display: block;
+      margin: auto;
+      width: 80%;
+    }
 
-      @-webkit-keyframes animate {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      @-moz-keyframes animate {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      @-ms-keyframes animate {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-      @keyframes animate {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
+    img.cover {
+      float: left;
+      max-height: 100%;
+      max-width: 100%;
+    }
 
-      img.logo {
-        display: block;
-        margin: auto;
-        width: 80%;
-      }
+    span.exout {
+      display: block;
+      height: 0;
+      transform: translate(-5px, -50px);
+      color: #444;
+      font-size: 24pt;
+      font-weight: bold;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    span.exout:hover,
+    button.exout:focus {
+      color: #e11;
+      cursor: pointer;
+    }
 
-      img.cover {
-        float: left;
-        max-height: 100%;
-        max-width: 100%;
-      }
+    button.subscribe {
+      display: block;
+      margin: 30px auto;
+      border: none;
+      width: 383.75px;
+      height: 55px;
+      background-image: url("images/button.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    button.subscribe:hover,
+    button.subscribe:focus {
+      cursor: pointer;
+      background-image: url("images/button-clicked.png");
+    }
 
-      span.exout {
-        display: block;
-        height: 0;
-        transform: translate(-5px, -50px);
-        color: #444;
-        font-size: 24pt;
-        font-weight: bold;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      span.exout:hover,
-      button.exout:focus {
-        color: #e11;
-        cursor: pointer;
-      }
+    div.part {
+      float: right;
+      width: 473px;
+      max-width: 100%;
+    }
 
-      button.subscribe {
-        display: block;
-        margin: 30px auto;
-        border: none;
-        width: 383.75px;
-        height: 55px;
-        background-image: url("images/button.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
-      button.subscribe:hover,
-      button.subscribe:focus {
-        cursor: pointer;
-        background-image: url("images/button-clicked.png");
-      }
-
-      div.part {
-        float: right;
-        width: 473px;
-        max-width: 100%;
-      }
-
-      @media screen and (orientation:portrait) {
+    @media screen and (orientation:portrait) {
       h1 {
         display: block;
         margin: auto;
@@ -244,27 +244,38 @@
   </div>
 
   <script>
-    var modal = document.getElementsByClassName("popup")[0];
-    var checkout = document.getElementById("button");
-    var close = document.getElementsByClassName("exout")[0];
-    var sub = document.getElementsByClassName("subscribe")[0];
+  var show = true; // TODO starting value should = newOrGuest && USA
+  var modal = document.getElementsByClassName("popup")[0];
+  var button = document.getElementById("button");
+  var close = document.getElementsByClassName("exout")[0];
+  var sub = document.getElementsByClassName("subscribe")[0];
 
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      hide();
     }
+  }
 
-    checkout.onclick = function() {
+  button.onclick = function() {
+    if (show) {
       modal.style.display = "block";
     }
+  }
 
-    close.onclick = function() {
-      modal.style.display = "none";
-    }
+  close.onclick = function() {
+    hide();
+  }
 
-    sub.onclick = function() {
-      modal.style.display = "none";
-    }
+  sub.onclick = function() {
+    hide();
+    location.reload();
+    // location.href = "/cart.php?action=add&sku=MUS12CK";
+    // location.href = "{{urls.checkout.single_address}}";
+  }
+
+  function hide() {
+    show = false;
+    modal.style.display = "none";
+  }
   </script>
 </html>
