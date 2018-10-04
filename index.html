@@ -18,7 +18,7 @@
       font-size: 10pt;
       font-style: italic;
       color: #333;
-      padding-top: 20px;
+      padding: 20px 20px 0;
     }
 
     div.popup {
@@ -224,7 +224,8 @@
   </body>
 
   <h3>Pop-up Test</h3>
-  <button id="button" title="This button displays the pop-up!">Check out</button>
+  <button id="button" title="This button displays the pop-up!">Continue</button>
+  <button id="button2" title="This button resets the cokie!">Reset</button>
 
   <div class="popup">
     <div class="popup-content">
@@ -237,29 +238,34 @@
       <div class="part">
         <button class="subscribe"></button>
         <img class="logo" src="images/logo.png">
-        <p align=center>*A one-year subscription will be added to your cart and you will be billed separately for the discounted price of $29.95.</p>
+        <p align=center>*A one-year subscription will be added to your cart and you will be billed separately for the discounted price of $29.95. Offer only valid to those shipping within the United States. One offer per household.</p>
       </div>
       </div>
     </div>
   </div>
 
   <script>
-  var show = true; // TODO starting value should = newOrGuest && USA
   var modal = document.getElementsByClassName("popup")[0];
   var button = document.getElementById("button");
+  var button2 = document.getElementById("button2");
   var close = document.getElementsByClassName("exout")[0];
   var sub = document.getElementsByClassName("subscribe")[0];
 
   window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target === modal) {
       hide();
     }
   }
 
   button.onclick = function() {
-    if (show) {
+    if (true) { // check cookie
+      // drop cookie
       modal.style.display = "block";
     }
+  }
+
+  button2.onclick = function() {
+    // reset the cookie
   }
 
   close.onclick = function() {
@@ -268,13 +274,14 @@
 
   sub.onclick = function() {
     hide();
-    location.reload();
     // location.href = "/cart.php?action=add&sku=MUS12CK";
+
+    /* change to be the current location in checkout if the cart URL,
+    use if the cart URL above redirects us */
     // location.href = "{{urls.checkout.single_address}}";
   }
 
   function hide() {
-    show = false;
     modal.style.display = "none";
   }
   </script>
