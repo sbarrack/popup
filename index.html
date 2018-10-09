@@ -224,7 +224,7 @@
   </body>
 
   <h3>Pop-up Test</h3>
-  <button id="button" title="This button displays the pop-up!">Continue</button>
+  <button id="button" title="This button displays the pop-up!">Display</button>
   <button id="button2" title="This button resets the cokie!">Reset</button>
 
   <div class="popup">
@@ -258,14 +258,14 @@
   }
 
   button.onclick = function() {
-    if (true) { // check cookie
-      // drop cookie
+    if (localStorage.getItem("show") != "false") {
+      localStorage.setItem("show", "false");
       modal.style.display = "block";
     }
   }
 
   button2.onclick = function() {
-    // reset the cookie
+    localStorage.removeItem("show");
   }
 
   close.onclick = function() {
@@ -274,13 +274,8 @@
 
   sub.onclick = function() {
     hide();
-    // location.href = "/cart.php?action=add&sku=MUS12CK";
-
-    /* change to be the current location in checkout if the cart URL,
-    use if the cart URL above redirects us */
-    // location.href = "{{urls.checkout.single_address}}";
   }
-
+  
   function hide() {
     modal.style.display = "none";
   }
