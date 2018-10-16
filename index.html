@@ -2,34 +2,40 @@
 <html lang="en">
   <body>
     <style>
+    /* font management */
     body {
       font-family: Arial, Helvetica, sans-serif;
     }
-    h1 {
+    .popup h1 {
       font-size: 18pt;
+      margin: 0 auto;
       padding-top: 20px;
     }
-    h2 {
+    .popup h2 {
       font-size: 12pt;
       color: #333;
+      margin: 0 auto;
       padding-top: 10px;
     }
-    p {
+    .popup p {
       font-size: 10pt;
       font-style: italic;
       color: #333;
       padding: 20px 20px 0;
     }
 
+    /* the gray space which hides the background a bit and contains the modal */
     div.popup {
-      display: none;
+      display: none; /* hide by default */
+      /* center on page over everything */
       position: fixed;
       left: 0;
       top: 0;
       z-index: 100;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.4);
+      background-color: rgba(0,0,0,0.4); /* transparent gray */
+      /* opening animation; works for chrome, firefox, edge/IE, etc */
       -webkit-animation-name: animate;
       -webkit-animation-duration: 0.5s;
       -moz-animation-name: animate;
@@ -40,6 +46,7 @@
       animation-duration: 0.5s;
     }
 
+    /* fade in */
     @-webkit-keyframes animate {
       from {
         opacity: 0;
@@ -73,21 +80,24 @@
       }
     }
 
+    /* the modal itself */
     div.popup-content {
       background-color: LightSkyBlue;
       background-image: linear-gradient(-5deg, DodgerBlue, LightSkyBlue, GhostWhite, white);
+      /* center on page */
       margin: auto;
       position: fixed;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
-      padding: 15px;
-      max-height: 590px;
-      max-width: 1170px;
+      padding: 15px; /* edge */
+      /* max-height: 590px; */
+      /* max-width: 1170px; */
       width: 802px;
       height: 404px;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+      /* opening animation */
       -webkit-animation-name: animatetop;
       -webkit-animation-duration: 0.5s;
       -moz-animation-name: animatetop;
@@ -98,6 +108,7 @@
       animation-duration: 0.5s;
     }
 
+    /* drop down */
     @-webkit-keyframes animatetop {
       from {
         top: -100%;
@@ -133,7 +144,7 @@
 
     img.logo {
       display: block;
-      margin: auto;
+      margin: 0 auto;
       width: 80%;
     }
 
@@ -143,10 +154,11 @@
       max-width: 100%;
     }
 
+    /* close button */
     span.exout {
       display: block;
       height: 0;
-      transform: translate(-5px, -50px);
+      transform: translate(-5px, -55px);
       color: #444;
       font-size: 24pt;
       font-weight: bold;
@@ -184,23 +196,23 @@
     }
 
     @media screen and (orientation:portrait) {
-      h1 {
+      .popup h1 {
         display: block;
-        margin: auto;
-        width: 80%;
+        width: 100%;
+        padding-top: 5px;
       }
-      h2 {
+      .popup h2 {
         display: block;
-        margin: auto;
-        width: 80%;
+        width: 100%;
+        padding-top: 10px;
       }
-      p {
+      .popup p {
         display: none;
       }
 
       div.popup-content {
-        width: 303px;
-        height: 550px;
+        width: 337px;
+        height: 530px;
       }
 
       div.part {
@@ -210,6 +222,7 @@
       button.subscribe {
         width: 307px;
         height: 44px;
+        margin: 20px auto;
       }
 
       img.cover {
@@ -217,7 +230,7 @@
         margin: auto;
         width: 60%;
         float: none;
-        padding-top: 30px;
+        padding-top: 15px;
       }
     }
     </style>
@@ -229,15 +242,19 @@
 
   <div class="popup">
     <div class="popup-content">
+      <!-- this gets translated outside of the box -->
       <span class="exout">&times;</span>
+      <!-- top/top-right portion of the modal content -->
       <div class="part">
         <h1 align=center>IT'S OUR WAY OF SAYING THANKS!</h1>
         <h2 align=center>Cool savings on our magazine plus Digital Edition <b>FREE!</b>*</h2>
       </div>
       <img src="images/cover.png" class="cover">
+      <!-- bottom/bottom-right portion of the modal content -->
       <div class="part">
         <button class="subscribe"></button>
         <img class="logo" src="images/logo.png">
+        <!-- p is hidden in portrait mode -->
         <p align=center>*A one-year subscription will be added to your cart and you will be billed separately for the discounted price of $29.95. Offer only valid to those shipping within the United States. One offer per household.</p>
       </div>
       </div>
@@ -245,27 +262,31 @@
   </div>
 
   <script>
-  var modal = document.getElementsByClassName("popup")[0];
   var button = document.getElementById("button");
   var button2 = document.getElementById("button2");
+  var modal = document.getElementsByClassName("popup")[0];
   var close = document.getElementsByClassName("exout")[0];
   var sub = document.getElementsByClassName("subscribe")[0];
 
-  window.onclick = function(event) {
-    if (event.target === modal) {
-      hide();
-    }
-  }
-
   button.onclick = function() {
-    if (localStorage.getItem("show") != "false") {
-      localStorage.setItem("show", "false");
+    if (!localStorage.getItem("hide")) {
+      localStorage.setItem("hide", "true");
       modal.style.display = "block";
     }
   }
 
   button2.onclick = function() {
-    localStorage.removeItem("show");
+    localStorage.removeItem("hide");
+  }
+
+  function hide() {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      hide();
+    }
   }
 
   close.onclick = function() {
@@ -274,10 +295,6 @@
 
   sub.onclick = function() {
     hide();
-  }
-  
-  function hide() {
-    modal.style.display = "none";
   }
   </script>
 </html>
