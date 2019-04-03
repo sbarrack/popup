@@ -1,0 +1,335 @@
+<!-- Popup code -->
+<div id="mag-ad-modal">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .popup h1 {
+            font-size: 16pt;
+            margin: 0 auto;
+            /* padding-top: 20px; */
+            padding-top: 5px;
+        }
+
+        .popup h2 {
+            font-size: 12pt;
+            color: #333;
+            width: 80%;
+            margin: 0 auto;
+            padding: 15px 0 20px;
+            /* padding: 10px 0 15px; */
+        }
+
+        .popup p {
+            font-size: 10pt;
+            /* font-size: 9pt; */
+            font-style: italic;
+            color: #333;
+            margin: 0 auto;
+            /* width: 95%; remove */
+        }
+
+        div.popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            -webkit-animation-name: animate;
+            -webkit-animation-duration: 0.5s;
+            -moz-animation-name: animate;
+            -moz-animation-duration: 0.5s;
+            -ms-animation-name: animate;
+            -ms-animation-duration: 0.5s;
+            animation-name: animate;
+            animation-duration: 0.5s;
+        }
+
+        @-webkit-keyframes animate {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes animate {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-ms-keyframes animate {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes animate {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        div.popup-content {
+            background-color: LightSkyBlue;
+            background-image: linear-gradient(-5deg, DodgerBlue, LightSkyBlue, GhostWhite, white);
+            margin: auto;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            width: 700px;
+            height: 359px;
+            /* width: 672px;
+            height: 324px; */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.5s;
+            -moz-animation-name: animatetop;
+            -moz-animation-duration: 0.5s;
+            -ms-animation-name: animatetop;
+            -ms-animation-duration: 0.5s;
+            animation-name: animatetop;
+            animation-duration: 0.5s;
+        }
+
+        @-webkit-keyframes animatetop {
+            from {
+                top: -100%;
+            }
+
+            to {
+                top: 0;
+            }
+        }
+
+        @-moz-keyframes animatetop {
+            from {
+                top: -100%;
+            }
+
+            to {
+                top: 0;
+            }
+        }
+
+        @-ms-keyframes animatetop {
+            from {
+                top: -100%;
+            }
+
+            to {
+                top: 0;
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -100%;
+            }
+
+            to {
+                top: 0;
+            }
+        }
+
+        img.logo {
+            display: block;
+            margin: 20px auto 15px;
+            /* width: 70%; */
+            width: 80%;
+        }
+
+        img.cover {
+            float: left;
+            max-height: 100%;
+        }
+
+        span.exout {
+            display: block;
+            height: 0;
+            transform: translate(-5px, -55px);
+            color: #444;
+            font-size: 24pt;
+            font-weight: bold;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        span.exout:hover,
+        button.exout:focus {
+            color: #e11;
+            cursor: pointer;
+        }
+
+        /* button.subscribe {
+            display: block;
+            border: none;
+            width: 383.75px;
+            height: 55px;
+            background-image: url("//store-9y2vksfpvn.mybigcommerce.com/product_images/uploaded_images/button.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        button.subscribe:hover,
+        button.subscribe:focus {
+            cursor: pointer;
+            background-image: url("//store-9y2vksfpvn.mybigcommerce.com/product_images/uploaded_images/button-clicked.png");
+        } */
+        img.subscribe {
+            display: block;
+            border: none;
+            width: 90%;
+            margin: auto;
+        }
+        img.subscribe:hover,
+        img.subscribe:focus {
+            cursor: pointer;
+            -webkit-filter: brightness(60%);
+            -moz-filter: brightness(60%);
+            -ms-filter: brightness(60%);
+            filter: brightness(60%);
+        }
+
+
+        div.part {
+            float: right;
+            /* width: 60.34049636803874%; */
+            width: 57%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .popup h1 {
+                display: block;
+                padding: 0;
+                width: 80%;
+            }
+            .popup h2 {
+                display: block;
+                /* width: 100%; */
+                width: 90%;
+                padding: 0;
+                /* margin: 10px 0 15px; */
+                margin: 10px auto 15px;
+            }
+            .popup p {
+                display: none;
+            }
+
+            div.popup-content {
+                width: 300px;
+                height: fit-content;
+                padding: 15px 0;
+            }
+
+            div.part {
+                float: left;
+                width: 100%;
+            }
+
+            img.logo {
+                display: none;
+            }
+
+            img.cover {
+                display: block;
+                margin: auto;
+                width: 70%;
+                float: none;
+            }
+
+            span.exout {
+                transform: translate(-15px, -5px);
+                float: right
+            }
+
+            /* button.subscribe {
+                width: 270px;
+                height: 38.69706840390879px;
+                margin: 15px auto 0;
+                padding: 0;
+            } */
+            img.subscribe {
+                margin: 15px auto 0;
+                padding: 0;
+            }
+        }
+    </style>
+
+    <div class="popup">
+        <div class="popup-content">
+            <span class="exout">&times;</span>
+            <div class="part">
+                <h1 align=center>IT'S OUR WAY OF SAYING THANKS!</h1>
+                <h2 align=center>Cool savings on our magazine plus Digital Edition <b>FREE!</b>*</h2>
+            </div>
+            <img src="//store-9y2vksfpvn.mybigcommerce.com/product_images/uploaded_images/cover.png" class="cover">
+            <div class="part">
+                <!-- <button class="subscribe"></button> -->
+                <img class="subscribe" src="//store-9y2vksfpvn.mybigcommerce.com/product_images/uploaded_images/button.png"></button>
+                <img class="logo" src="//store-9y2vksfpvn.mybigcommerce.com/product_images/uploaded_images/logo.png">
+                <p align=center>*A one-year subscription will be added to your cart and you will be billed separately for the discounted price of $29.95. Offer only valid to those shipping within the United States. One offer per household.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //<!-- This will hide the JS from browsers with it disabled
+        var modal = document.getElementsByClassName("popup")[0];
+        var close = document.getElementsByClassName("exout")[0];
+        var sub = document.getElementsByClassName("subscribe")[0];
+
+        var timer = setInterval(function () {
+            // localStorage.removeItem("hide");
+            var country = document.getElementsByClassName("country-name")[0].innerText;
+            if (!localStorage.getItem("hide") && (country === "United States")) {
+                modal.style.display = "block";
+                localStorage.setItem("hide", "true");
+            }
+        }, 5000);
+
+        function hide() {
+            modal.style.display = "none";
+            clearInterval(timer);
+        }
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                hide();
+            }
+        }
+
+        close.onclick = function () {
+            hide();
+        }
+
+        sub.onclick = function () {
+            hide();
+            location.href = "/cart.php?action=add&sku=MUS12CK";
+        }
+        //-->
+    </script>
+</div>
