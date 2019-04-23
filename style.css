@@ -21,7 +21,6 @@ div.ca-popup {
     animation-name: animate;
     animation-duration: 0.5s;
 }
-
 @-webkit-keyframes animate {
     from {
         opacity: 0;
@@ -31,7 +30,6 @@ div.ca-popup {
         opacity: 1;
     }
 }
-
 @-moz-keyframes animate {
     from {
         opacity: 0;
@@ -41,7 +39,6 @@ div.ca-popup {
         opacity: 1;
 }
 }
-
 @-ms-keyframes animate {
     from {
         opacity: 0;
@@ -51,7 +48,6 @@ div.ca-popup {
         opacity: 1;
     }
 }
-
 @keyframes animate {
     from {
         opacity: 0;
@@ -63,18 +59,15 @@ div.ca-popup {
 }
 
 div.ca-popup-content {
-    background-color: LightSkyBlue;
-    background-image: linear-gradient(-5deg, DodgerBlue, LightSkyBlue, GhostWhite, white);
+    background-color: white;
     margin: auto;
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 15px 0;
-    width: 300px;
+    min-width: 300px;
     height: fit-content;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.5s;
     -moz-animation-name: animatetop;
@@ -84,7 +77,6 @@ div.ca-popup-content {
     animation-name: animatetop;
     animation-duration: 0.5s;
 }
-
 @-webkit-keyframes animatetop {
     from {
         top: -100%;
@@ -94,7 +86,6 @@ div.ca-popup-content {
         top: 0;
     }
 }
-
 @-moz-keyframes animatetop {
     from {
         top: -100%;
@@ -104,7 +95,6 @@ div.ca-popup-content {
         top: 0;
     }
 }
-
 @-ms-keyframes animatetop {
     from {
         top: -100%;
@@ -114,7 +104,6 @@ div.ca-popup-content {
         top: 0;
     }
 }
-
 @keyframes animatetop {
     from {
         top: -100%;
@@ -126,72 +115,44 @@ div.ca-popup-content {
 }
 
 span.ca-exout {
+    font-size: 24pt;
+    float: right;
+    transform: translate(-10px, -10px);
     display: block;
     height: 0;
-    float: right;
-    transform: translate(-15px, -5px);
     color: #444;
-    font-size: 24pt;
     font-weight: bold;
 }
-
-span.ca-exout:hover, span.ca-exout:focus {
+span.ca-exout:hover,
+span.ca-exout:focus {
     color: #e11;
     cursor: pointer;
 }
 
-.ca-popup h1 {
+.ca-popup h1,
+.ca-popup h2,
+.ca-popup p {
     display: block;
-    font-size: 16pt;
     margin: 0 auto;
-    padding: 0;
     text-align: center;
-    width: 80%;
-}    
-
-.ca-popup h2 {
-    color: #333;
-    display: block;
-    font-size: 12pt;
-    margin: 0 auto;
-    padding: 10px 0 15px;
-    text-align: center;
-    width: 90%;
 }
 
 .ca-popup p {
     display: none;
-    color: #333;
-    font-size: 10pt;
-    font-style: italic;
-    text-align: center;
-    margin: 0 auto;
 }
 
 img.ca-logo {
     display: none;
     margin: 0 auto;
-    padding: 25px 0;
-    width: 80%;
-}
-
-img.ca-cover {
-    display: block;
-    float: none;
-    margin: auto;
-    max-height: 100%;
-    width: 70%
 }
 
 img.ca-subscribe {
     display: block;
     border: none;
-    width: 90%;
-    padding: 15px 0 0;
     margin: 0 auto;
 }
-
-img.ca-subscribe:hover, img.ca-subscribe:focus {
+img.ca-subscribe:hover,
+img.ca-subscribe:focus {
     cursor: pointer;
     -webkit-filter: brightness(60%);
     -moz-filter: brightness(60%);
@@ -199,35 +160,24 @@ img.ca-subscribe:hover, img.ca-subscribe:focus {
     filter: brightness(60%);
 }
 
-div.ca-part {
-    float: left;
-    width: 100%;
+img.ca-cover {
+    max-height: 100%;
+    margin: auto;
+    display: block;
+    float: none;
 }
 
 @media only screen and (min-width: 768px) {
-    .ca-popup h1 {
-        padding-top: 20px;
-        width: 100%;
+    div.ca-popup-content {
+        min-width: 700px;
     }
 
-    .ca-popup h2 {
-        padding: 15px 0 20px;
-        width: 80%;
+    span.ca-exout {
+        transform: translate(10px, -50px);
     }
 
     .ca-popup p {
         display: block;
-    }
-
-    div.ca-popup-content {
-        width: 700px;
-        height: 359px;
-        padding: 15px;
-    }
-
-    div.ca-part {
-        float: right;
-        width: 57%;
     }
 
     img.ca-logo {
@@ -235,17 +185,11 @@ div.ca-part {
     }
 
     img.ca-cover {
-        display: initial;
-        margin: none;
-        width: auto;
         float: left;
+        width: auto;
     }
 
-    span.ca-exout {
-        transform: translate(5px, -55px);
-    }
-
-    img.ca-subscribe {
-        padding: 0;
+    div.ca-part {
+        float: right;
     }
 }

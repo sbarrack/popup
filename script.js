@@ -4,7 +4,7 @@ onload = function () {
 
     var modal = document.getElementById("ca-popup-1");
     var close = document.getElementsByClassName("ca-exout")[0];
-    var sub = document.getElementsByClassName("ca-subscribe")[0];
+    var sub = document.getElementsByClassName("ca-subscribe")[0];    
 
     button.onclick = function () {
         if (!localStorage.getItem("hide")) {
@@ -34,4 +34,6 @@ onload = function () {
     sub.onclick = function () {
         hide();
     }
+
+    loadtext();    
 };
