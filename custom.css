@@ -1,8 +1,16 @@
-/*
-Most of this content can be edited freely. Anything you change or add here 
-will take precedence over the default styling. Know what you are doing 
-before adding, removing, or changing each field.
-*/
+/**
+ * PLEASE CAREFULLY READ THE README, THE MANUAL, AND ALL OF THE ANNOTATIONS IN
+ * THIS DOCUMENT TO UNDERSTAND HOW TO CHANGE...
+ * 
+ * THE STYLING; INCLUDING FONT, COLORS, SIZING, ETC.
+ * 
+ * ...TO BE USED IN THE CHECKOUT AD ON BIGCOMMERCE. NOT FOLLOWING THEM WILL
+ * RESULT IN UNDESIRED EFFECTS.
+ * 
+ * YOU HAVE BEEN WARNED . . .
+ */
+
+/*TODO write annotations*/
 
 div.ca-popup-content {
     padding: 15px 0;

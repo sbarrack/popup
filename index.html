@@ -10,13 +10,22 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="custom.css">
-  <script src="custom.js"></script>
   <script src="script.js"></script>
+  <script src="custom.js"></script>
 </head>
 
 <h3>Pop-up Test</h3>
 <button id="button" title="This button displays the pop-up!">Display</button>
 <button id="button2" title="This button resets the cokie!">Reset</button>
+
+<noscript>
+    <style>
+        #ca-popup-1 {
+            display: none;
+        }
+    </style>
+    <h1>This modal requires JavaScript to be enabled</h1>
+</noscript>
 
 <div class="ca-popup" id="ca-popup-1">
   <div class="ca-popup-content">
