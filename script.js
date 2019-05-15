@@ -32,7 +32,7 @@ onload = function () {
     }
 
     sub.onclick = function () {
-        hide();
+        // hide();
     }
 
     loadtext();    

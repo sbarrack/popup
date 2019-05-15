@@ -1,23 +1,13 @@
 /**
- * PLEASE CAREFULLY READ THE README, THE MANUAL, AND ALL OF THE ANNOTATIONS IN
- * THIS DOCUMENT TO UNDERSTAND HOW TO CHANGE...
- * 
- * THE STYLING; INCLUDING FONT, COLORS, SIZING, ETC.
- * 
- * ...TO BE USED IN THE CHECKOUT AD ON BIGCOMMERCE. NOT FOLLOWING THEM WILL
- * RESULT IN UNDESIRED EFFECTS.
+ * PLEASE CAREFULLY READ THE README AND THE MANUAL TO UNDERSTAND HOW TO CHANGE
+ * THE STYLING, INCLUDING FONT, COLORS, SIZING, ETC. TO BE USED IN THE CHECKOUT
+ * AD ON BIGCOMMERCE. NOT FOLLOWING THEM WILL RESULT IN UNDESIRED EFFECTS.
  * 
  * YOU HAVE BEEN WARNED . . .
  */
 
-/*TODO write annotations*/
-
 div.ca-popup-content {
-    padding: 15px 0;
-    width: 50%;
-    background-color: LightSkyBlue;
-    background-image: linear-gradient(-5deg, DodgerBlue, LightSkyBlue, GhostWhite, white);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    background: lightskyblue linear-gradient(-5deg, DodgerBlue, LightSkyBlue, GhostWhite, white);
 }
 
 .ca-popup h1 {
@@ -56,13 +46,6 @@ img.ca-cover {
 }
 
 @media only screen and (min-width: 768px) {
-    div.ca-popup-content {
-        /* min-width: 700px; */
-        width: 51%;
-        /* max-width: 700px; */
-        padding: 15px;
-    }
-
     .ca-popup h1 {
         padding: 20px 0 0 0;
         width: 100%;
@@ -80,11 +63,10 @@ img.ca-cover {
     img.ca-cover {
         float: left;
         width: calc(43% - 15px);
-        padding: 0 15px 0 0;
+        padding-right: 15px;
     }
 
-    div.ca-part,
-    div.ca-parttwo {
+    div.ca-part {
         float: right;
         width: 57%;
     }

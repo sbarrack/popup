@@ -1,10 +1,7 @@
 /**
  * PLEASE CAREFULLY READ THE README, THE MANUAL, AND ALL OF THE ANNOTATIONS IN
- * THIS DOCUMENT TO UNDERSTAND HOW TO CHANGE...
- * 
- * THE TEXT, IMAGES, AND PROMOTION SKU
- * 
- * ...TO BE USED IN THE CHECKOUT AD ON BIGCOMMERCE. NOT FOLLOWING THEM WILL
+ * THIS DOCUMENT TO UNDERSTAND HOW TO CHANGE THE TEXT, IMAGES, AND PROMOTION
+ * SKU TO BE USED IN THE CHECKOUT AD ON BIGCOMMERCE. NOT FOLLOWING THEM WILL
  * RESULT IN UNDESIRED EFFECTS.
  * 
  * YOU HAVE BEEN WARNED . . .
@@ -19,7 +16,7 @@ function loadtext() {
     var subtitle = modal.getElementsByTagName("h2")[0]
     var text = modal.getElementsByTagName("p")[0]
     var pictures = modal.getElementsByTagName("img")
-    var sub = document.getElementsByClassName("subscribe")[0]
+    var sub = document.getElementsByClassName("ca-subscribe")[0]
     var cover = pictures[0]
     var button = pictures[1]
     var logo = pictures[2]
@@ -77,7 +74,7 @@ function loadtext() {
 // v v v v v v v v v v v (DO NOT EDIT BELOW THIS LINE) v v v v v v v v v v v v
 //-----------------------------------------------------------------------------
     sub.onclick = function () {
-        hide()
+        modal.style.display = "none";
         // location.href = `/cart.php?action=add&sku=${sku}`
     }
 }
