@@ -7,7 +7,7 @@
  */
 
 div.ca-popup-content {
-    background: lightskyblue linear-gradient(-5deg, DodgerBlue, LightSkyBlue, GhostWhite, white);
+    background: lightskyblue linear-gradient(-5deg, dodgerblue, lightskyblue, ghostwhite, white);
 }
 
 .ca-popup h1 {
