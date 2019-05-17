@@ -33,8 +33,9 @@ function loadtext() {
 
     /**
      * These first three fields contain the text to be used in the ad. You may
-     * use standard HTML tags within the quotes to style the text. For example,
-     * to make some text bold:
+     * use standard HTML tags within the quotes to style the text
+     * (https://www.w3schools.com/html/html_formatting.asp). For example, to
+     * make some text bold:
      * 
      * "We're selling <b>GOOD STUFF</b>!"
      */
@@ -46,7 +47,7 @@ function loadtext() {
     subtitle.innerHTML = "Cool savings on our magazine plus Digital Edition <b>FREE!</b>*"
 
     // This is the fine print displayed at the bottom of the ad
-    text.innerHTML = "*A one-year subscription will be added to your cart and you will be billed separately for the discounted price of $29.95. Offer only valid to those shipping within the United States. One offer per household."
+    text.innerHTML = "<i>*A one-year subscription will be added to your cart and you will be billed separately for the discounted price of $29.95. Offer only valid to those shipping within the United States. One offer per household.<i>"
 
     /**
      * These next three fields are the pathway to the images that are displayed
