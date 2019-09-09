@@ -1,46 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Stephen Barrack">
-  <meta name="description" content="Test page for popup">
-  <meta name="keywords" content="">
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="custom.css">
-  <script src="script.js"></script>
-  <script src="custom.js"></script>
+  <meta name="description" content="Test page for modal">
 </head>
 
-<h3>Pop-up Test</h3>
-<button id="button" title="This button displays the pop-up!">Display</button>
-<button id="button2" title="This button resets the cokie!">Reset</button>
+<body>
+  <h3>Modal test</h3>
+  <button id="dev-button" title="This button displays the modal!">Display</button>
+  <button id="dev-button-2" title="This button resets the cookie!">Reset</button>
 
-<noscript>
+  <noscript>
     <style>
-        #ca-popup-1 {
-            display: none !important;
-        }
+      #ca-modal-1 {
+        display: none !important;
+      }
     </style>
     <h1>This modal requires JavaScript to be enabled.</h1>
-</noscript>
+  </noscript>
 
-<div class="ca-popup" id="ca-popup-1">
-  <div class="ca-popup-content">
-    <span class="ca-exout">&times;</span>
-    <div class="ca-part">
-      <h1>DEMO POPUP MODAL</h1>
-      <h2>This is a demo and should not be viewable on the front-end.</h2>
-    </div>
-    <img src="images/cover-demo.png" class="ca-cover">
-    <div class="ca-part">
-      <img class="ca-subscribe" src="images/button-demo.png"></button>
-      <img class="ca-logo" src="images/logo-demo.png">
-      <p><i>If you are reading this and you are not the developer, please close this ad and contact support.<i></p>
+  <div class="ca-modal" id="ca-modal-1">
+    <div class="ca-modal-content">
+      <span class="ca-modal-exout">&times;</span>
+      <div class="ca-modal-part">
+        <!-- title & subtitle can be changed here -->
+        <h1 align=center>IT'S OUR WAY OF SAYING THANKS!</h1>
+        <h2 align=center>Cool savings on our magazine plus Digital Edition <b>FREE!</b>*</h2>
+      </div>
+      <!-- image URLs can be changed here
+        /store-STOREHASH.mybigcommerce.com/product_images/uploaded_images/...
+        replace STOREHASH with the correct store hash for URLs -->
+      <img src="images/cover.png" class="ca-modal-cover">
+      <div class="ca-modal-part">
+        <img class="ca-modal-subscribe" src="images/button.png"></button>
+        <img class="ca-modal-logo" src="images/logo.png">
+        <!-- fine print can be changed here -->
+        <p align=center>*A one-year subscription will be added to your cart and you will be billed separately for the discounted price of $29.95. Offer only valid to those shipping within the United States. One offer per household.</p>
+      </div>
     </div>
   </div>
-</div>
 
+  <script>
+  //<!--
+  onload = function() {
+    let modal = document.getElementsByClassName("ca-modal")[0];
+    let close = document.getElementsByClassName("ca-modal-exout")[0];
+    let sub = document.getElementsByClassName("ca-modal-subscribe")[0];
+
+    let timer = setInterval(function() {
+      // localStorage.removeItem("ca-modal-hide"); // test only
+      let country = document.getElementsByClassName("country-name")[0].innerText;
+      if (!localStorage.getItem("ca-modal-hide") && (country === "United States")) {
+        modal.style.display = "block";
+        localStorage.setItem("ca-modal-hide", "true");
+      }
+    }, 5000);
+
+    function hide() {
+      modal.style.display = "none";
+      clearInterval(timer);
+    }
+
+    onclick = function(event) {
+      if (event.target === modal) {
+        hide();
+      }
+    }
+
+    close.onclick = function() {
+      hide();
+    }
+
+    sub.onclick = function() {
+      hide();
+      location.href = "/cart.php?action=add&sku=MUS12CK"; // change SKU here
+    }
+
+    // dev only
+    let devButton = document.getElementById("dev-button");
+    let devButton2 = document.getElementById("dev-button-2");
+
+    devButton.onclick = function () {
+      if (!localStorage.getItem("ca-modal-hide")) {
+        localStorage.setItem("ca-modal-hide", "true");
+        modal.style.display = "block";
+      }
+    }
+
+    devButton2.onclick = function () {
+        localStorage.removeItem("ca-modal-hide");
+    }
+  }
+  //-->
+  </script>
+</body>
 </html>
+
