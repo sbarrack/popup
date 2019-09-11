@@ -270,8 +270,8 @@
         let close = document.getElementsByClassName('ca-modal-exout')[0]
         let sub = document.getElementsByClassName('ca-modal-subscribe')[0]
 
-        let key = 'ca-modal-hide-1'
-        let oldkeys = ['hide', 'ca-modal-hide']
+        let key = 'ca-modal-hide'
+        let oldkeys = ['hide', 'ca-modal-hide-1']
 
         oldkeys.forEach(k => {
             localStorage.removeItem(k)
@@ -303,7 +303,7 @@
 
         sub.onclick = function() {
             hide()
-            location.href = '/cart.php?action=add&sku=MUS12CK'
+            location.href = '/cart.php?action=add&sku=SKU123'
         }
 
         let devButton = document.getElementById('dev-button')
