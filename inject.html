@@ -1,4 +1,5 @@
-<!-- Checkout modal -->
+<!-- Checkout modal
+Follow the comments (marked yellow in BigCommerce) to successfully change the modal -->
 <style>
 .ca-modal h1 {
     font-size: 16pt;
@@ -72,9 +73,8 @@ div.ca-modal {
 }
 
 div.ca-modal-content {
-    /* change bg here */
-    background-color: LightSkyBlue;
-    background-image: linear-gradient(-5deg, DodgerBlue, LightSkyBlue, GhostWhite, white);
+    background-color: #87cefa; /* a solid background color in hex, backup for background-image */
+    background-image: linear-gradient(-5deg, #1e90ff, #87cefa, #f8f8ff, #ffffff); /* a degree of rotation and a list of colors in hex to form a gradient, list can be any length greater than 2*/
     margin: auto;
     position: fixed;
     top: 0;
@@ -226,19 +226,19 @@ div.ca-modal-part {
 }
 </style>
 
-<!-- change modal content here -->
 <div class="ca-modal">
     <div class="ca-modal-content">
         <span class="ca-modal-exout">&times;</span>
         <div class="ca-modal-part">
-            <h1 align=center>IT'S OUR WAY OF SAYING THANKS!</h1>
-            <h2 align=center>Cool savings on our magazine plus Digital Edition <b>FREE!</b>*</h2>
+            <h1 align=center>IT'S OUR WAY OF SAYING THANKS!</h1><!-- the title of the modal -->
+            <h2 align=center>Cool savings on our magazine plus Digital Edition <b>FREE!</b>*</h2><!-- the subtitle of the modal -->
         </div>
-        <img src="//ca-test.mybigcommerce.com/product_images/uploaded_images/cover.png" class="ca-modal-cover">
+        <!-- images are located in Storefront > Image Manager in BigCommerce, back-up/rename the old images before uploading -->
+        <img src="//ca-test.mybigcommerce.com/product_images/uploaded_images/cover.png" class="ca-modal-cover"><!-- save your cover image to cover.png -->
         <div class="ca-modal-part">
-            <img class="ca-modal-subscribe" src="//ca-test.mybigcommerce.com/product_images/uploaded_images/button.png"></button>
-            <img class="ca-modal-logo" src="//ca-test.mybigcommerce.com/product_images/uploaded_images/logo.png">
-            <p align=center>*A one-year subscription will be added to your cart and you will be billed separately for the discounted price of $29.95. Offer only valid to those shipping within the United States. One offer per household.</p>
+            <img class="ca-modal-subscribe" src="//ca-test.mybigcommerce.com/product_images/uploaded_images/button.png"></button><!-- save your subscribe button image to subscribe.png -->
+            <img class="ca-modal-logo" src="//ca-test.mybigcommerce.com/product_images/uploaded_images/logo.png"><!-- save your logo image to logo.png -->
+            <p align=center>*A one-year subscription will be added to your cart and you will be billed separately for the discounted price of $29.95. Offer only valid to those shipping within the United States. One offer per household.</p><!-- the fine print of the modal -->
         </div>
     </div>
 </div>
@@ -258,7 +258,7 @@ onload = function() {
     })
 
     let timer = setInterval(function () {
-        // localStorage.setItem(key, 'false'); // test only
+        // localStorage.setItem(key, 'false') // test only, do not change this line
         let country = document.getElementsByClassName('country-name')[0].innerText;
         if (localStorage.getItem(key) != 'true' && country === 'United States') {
             modal.style.display = 'block'
@@ -283,7 +283,7 @@ onload = function() {
 
     sub.onclick = function() {
         hide()
-        location.href = '/cart.php?action=add&sku=MUS12CK' // change SKU here
+        location.href = '/cart.php?action=add&sku=MUS12CK' // change sku=XXXXXX to your SKU
     }
 
     let devButton = document.getElementById('dev-button')
@@ -303,4 +303,3 @@ onload = function() {
 //-->
 </script>
 <!-- End of: Checkout modal -->
-

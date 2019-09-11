@@ -278,7 +278,7 @@
         })
 
         let timer = setInterval(function () {
-            // localStorage.setItem(key, 'false'); // test only
+            // localStorage.setItem(key, 'false')
             let country = document.getElementsByClassName('country-name')[0].innerText;
             if (localStorage.getItem(key) != 'true' && country === 'United States') {
                 modal.style.display = 'block'
